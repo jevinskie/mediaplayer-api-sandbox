@@ -12,5 +12,6 @@ clean:
 	rm -rf *.dSYM/
 	rm -f $(TARGETS)
 
-mediaplayer-monitor-cli: mediaplayer-monitor-cli.m
-	$(CC) -o $@ $^ $(OBJC_FLAGS) -framework Foundation -framework mediaplayer
+mediaplayer-monitor-cli: mediaplayer-monitor-cli.m mediaplayer-monitor-cli-Info.plist
+	$(CC) -o $@ $< $(OBJC_FLAGS) -framework Foundation -framework MediaPlayer -F ProtocolBuffer.xcframework/macos -framework ProtocolBuffer -F MediaServices.xcframework/macos -framework MediaServices -F MediaRemote.xcframework/macos -framework MediaRemote -fmodules -Wl,-sectcreate,__TEXT,__info_plist,$(basename $<)-Info.plist
+	codesign -f -s "Developer ID Application: Jevin Sweval (ZK96P738ZR)" $@

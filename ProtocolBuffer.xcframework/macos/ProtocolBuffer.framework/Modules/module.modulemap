@@ -1,0 +1,4 @@
+module ProtocolBuffer [system] {
+    header "Headers/ProtocolBuffer/ProtocolBuffer.h"
+    export *
+}

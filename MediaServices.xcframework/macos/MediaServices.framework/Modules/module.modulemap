@@ -1,0 +1,4 @@
+module MediaServices [system] {
+    header "Headers/MediaServices/MediaServices.h"
+    export *
+}

@@ -1,0 +1,4 @@
+module MediaRemote [system] {
+    header "Headers/MediaRemote/MediaRemote.h"
+    export *
+}
